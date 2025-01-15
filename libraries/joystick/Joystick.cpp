@@ -45,5 +45,6 @@ int16_t Joystick::getYValue() // Gets the Y value mapped from -512 to 512
 }
 bool Joystick::getButtonValue() // Gets the button value if a button is assigned.
 {
+  if (this->_btnPin == 255) return false;
   return digitalRead(this->_btnPin) == HIGH ? true : false;
 }
